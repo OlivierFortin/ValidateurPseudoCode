@@ -1,0 +1,57 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Pseudo Code",
+	"patterns": [
+          {
+            "include": "#keywords"
+          },
+          {
+            "include": "#strings"
+          },
+          {
+            "include": "#types"
+          },
+          {
+            "include": "#logique"
+          }
+                          
+	],
+	"repository": {
+                "types" : {
+                   "patterns" : [{
+                     "name" : "keyword.types.alg",
+                     "match" :  "\\b(entier|reel|caractere|texte|booleen)\\b"
+                   }] 
+                },
+		"keywords": {
+			"patterns": [{
+                          "name": "keyword.control.alg",
+                          "match": "\\b(ALGORITHME|CONSTANTES|VARIABLES|LOGIQUE|FIN)\\b"
+                        },{
+                        "name": "keyword.control.alg",
+                        "match": "\\b(LIRE|ECRIRE)\\b"
+                        }]
+                },
+                "strings": {
+                  "name": "string.quoted.double.alg",
+                  "begin": "\"",
+                  "end": "\"",
+                  "patterns": [
+                    {
+                      "name": "constant.character.escape.alg",
+                      "match": "\\\\."
+                    }
+                  ]
+                },
+                "logique":{
+                  "name": "logique.openclose.alg",
+                  "begin": "LOGIQUE",
+                  "end": "FIN",
+                  "patterns":[
+                    { 
+                      "include" : "$self"
+                    }]
+                }
+	},
+	"scopeName": "source.alg"
+}

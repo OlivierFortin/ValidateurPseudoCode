@@ -1,0 +1,25 @@
+{
+  "name": "validateurpseudocode",
+  "displayName": "ValidateurPseudoCode",
+  "description": "Validateur de pseudo code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "alg",
+      "aliases": ["Pseudo Code", "alg"],
+      "extensions": [".alg"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "alg",
+      "scopeName": "source.alg",
+      "path": "./syntaxes/alg.tmLanguage.json"
+    }]
+  }
+}
